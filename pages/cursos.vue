@@ -2,17 +2,20 @@
   <v-app>
     <v-breadcrumbs :items="items" divider="/"></v-breadcrumbs>
     <v-container md="6">
-      <h1>Cursos</h1>
-      <hr />
-      <p class="my-8">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero, dicta
-        dolores dolor ex doloribus laboriosam distinctio non labore nesciunt
-        itaque consectetur ullam maxime libero nostrum accusantium veritatis
-        accusamus. Numquam.
-      </p>
-      </v-container>
-      <v-container fluid>
-      <v-app class="ma-10">
+      <h1 class="Curso" href="www.google.cl">Cursos</h1>
+
+      <hr id="hr" />
+      <v-col align-center justify-center fill-height class="Text">
+        <p class="my-8">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero,
+          dicta dolores dolor ex doloribus laboriosam distinctio non labore
+          nesciunt itaque consectetur ullam maxime libero nostrum accusantium
+          veritatis accusamus. Numquam.
+        </p>
+      </v-col>
+    </v-container>
+    <v-container>      
+      <v-app>
         <v-data-iterator
           :items="items"
           :items-per-page.sync="itemsPerPage"
@@ -56,7 +59,9 @@
               ></v-text-field>
 
               <v-spacer></v-spacer>
-              <v-btn class="ma-2" outlined color="white"> Buscar </v-btn>
+              <v-btn class="ma-2" outlined rounded color="white">
+                Buscar
+              </v-btn>
             </v-toolbar>
             <span class="mdi mdi-clipboard-list-outline m-4">
               X Colecciones disponibles para tu selección</span
@@ -156,14 +161,14 @@ export default {
         {
           text: "Inicio",
           disabled: false,
-          href: "/"
+          href: "/",
         },
         {
           text: "Cursos",
           disabled: false,
-          href: "cursos"
-        }
-      ]
+          href: "cursos",
+        },
+      ],
     };
   },
   computed: {
@@ -171,8 +176,8 @@ export default {
       return Math.ceil(this.items.length / this.itemsPerPage);
     },
     filteredKeys() {
-      return this.keys.filter(key => key !== "Name");
-    }
+      return this.keys.filter((key) => key !== "Name");
+    },
   },
   methods: {
     nextPage() {
@@ -183,7 +188,7 @@ export default {
     },
     updateItemsPerPage(number) {
       this.itemsPerPage = number;
-    }
-  }
+    },
+  },
 };
 </script>

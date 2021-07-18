@@ -1,11 +1,22 @@
 body {
   font-family: "Arimo", sans-serif;
 }
-hr {
+#hr {
+  position: absolute;
   border: 0;
   margin-bottom: 5px;
-  height: 0;
+  height: 2px;
   width: 50px;
-  box-shadow: 0 1px 5px 1px indigo;
+  left: 652px;
+  top: 120px;
+  box-shadow: 0 1px 5px 1px #3434ff;
+  text-align: center;
 }
-
+.Curso {
+  text-align: center;
+}
+.Text {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}

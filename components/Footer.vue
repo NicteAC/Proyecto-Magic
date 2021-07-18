@@ -2,9 +2,9 @@
   <v-footer dark padless>
     <v-card class="flex" flat tile>
       <v-card-title>
-        <strong class="subheading"
-          >Get connected with us on social networks!</strong
-        >
+        <a class="ma-2" href="#">Terminos y condiciones</a>
+        <a class="ma-2" href="#">Privacidad</a>
+        <a class="ma-2" href="#">Soporte</a>
 
         <v-spacer></v-spacer>
 
