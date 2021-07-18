@@ -1,31 +1,28 @@
 <template>
-  <v-card class="mx-auto">
-    <v-container fluid>
-      <v-row>
-        <v-col v-for="card in arrayApi" :key="card.cards" cols="4">
-          <v-card>
-            <v-img
-              :src="card.cards"
-              class="white--text"
-              height="500px"
-              width="360px"
-            >
-              <v-card-title v-text="card.name"></v-card-title>
-            </v-img>
-          </v-card>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-card>
+  <v-container fluid>
+    <v-row>
+      <v-col v-for="(card, i) of arrayApi.cards" :key="i" class="my-4" md="4">                        
+          <v-img
+            :src="card.imageUrl"
+            class="grey--text"
+            height="500px"
+            width="360px"
+          >
+            <v-card-title v-text="card.name"></v-card-title>
+          </v-img>      
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
 export default {
   components: {},
-
   data() {
     return {
-      arrayApi: {},
+      arrayApi: {
+        data: {}
+      },
     };
   },
   methods: {

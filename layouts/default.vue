@@ -1,5 +1,5 @@
 <template>
-  <v-app id="backgroundColor">
+  <v-app>
     <NavBar />
     <Nuxt />
     <Footer />
@@ -14,6 +14,6 @@ export default {
 </script>
 <style>
 #backgroundColor {
-  background-color: #cacaca;
+  background-color: #EDF2F7;
 }
 </style>

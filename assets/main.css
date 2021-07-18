@@ -1,0 +1,11 @@
+body {
+  font-family: "Arimo", sans-serif;
+}
+hr {
+  border: 0;
+  margin-bottom: 5px;
+  height: 0;
+  width: 50px;
+  box-shadow: 0 1px 5px 1px indigo;
+}
+
