@@ -27,7 +27,7 @@
         >
           <template v-slot:header>
             <v-toolbar color="#a0c4ff" class="mb-4" height="105">
-              <div class="mx-4">Filtra por</div>
+              <div class="mx-4">Filtra por:</div>
               <v-select
                 v-model="sortBy"
                 flat
@@ -48,7 +48,7 @@
                 label="Tipo"
               ></v-select>
               <v-spacer></v-spacer>
-              <div class="mx-4">Busqueda</div>
+              <div class="mx-4">Busqueda:</div>
               <v-text-field
                 v-model="search"
                 clearable
