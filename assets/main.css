@@ -12,11 +12,7 @@ body {
   box-shadow: 0 1px 5px 1px #3434ff;
   text-align: center;
 }
-.Curso {
-  text-align: center;
-}
-.Text {
-  display: flex;
-  justify-content: space-evenly;
-  text-align: center;
+
+a {
+  text-decoration: none;
 }

@@ -1,15 +1,19 @@
 <template>
   <v-container fluid>
     <v-row>
-      <v-col v-for="(card, i) of arrayApi.cards" :key="i" class="my-4" md="4">
-        <v-card  href="#">
-        <v-img
-          :src="card.imageUrl"
-          class="indigo--text"
-          height="500px"
-          width="360px"
-          ><v-btn class="ma-3" rounded x-small v-text="card.name" elevation="2"></v-btn>
-        </v-img>        
+      <v-col v-for="(card, i) of arrayApi.cards" :key="i" class="my-4" md="3">
+        <v-card :to="`/cursos/${card.name}`">
+          <v-img
+            :src="card.imageUrl"
+            class="indigo--text"
+            ><v-btn
+              class="ma-3"
+              rounded
+              x-small
+              v-text="card.name"
+              elevation="2"
+            ></v-btn>
+          </v-img>
         </v-card>
       </v-col>
     </v-row>
@@ -17,6 +21,7 @@
 </template>
 
 <script>
+
 export default {
   components: {},
   data() {

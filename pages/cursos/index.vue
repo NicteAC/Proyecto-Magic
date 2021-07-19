@@ -2,11 +2,11 @@
   <v-app>
     <v-breadcrumbs :items="items" divider="/"></v-breadcrumbs>
     <v-container md="6">
-      <h1 class="Curso" href="www.google.cl">Cursos</h1>
+      <h1 class="text-center">Cursos</h1>
 
       <hr id="hr" />
       <v-col align-center justify-center fill-height class="Text">
-        <p class="my-8">
+        <p class="text-center my-4">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum vero,
           dicta dolores dolor ex doloribus laboriosam distinctio non labore
           nesciunt itaque consectetur ullam maxime libero nostrum accusantium
