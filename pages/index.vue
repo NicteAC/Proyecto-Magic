@@ -1,17 +1,9 @@
 <template>
   <v-app>
-      <h1>
-          Esta es una pagina de Inicio
-      </h1>
+   <h1>PAgina de Inicio</h1>
   </v-app>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
-
-<style>
-
-</style>

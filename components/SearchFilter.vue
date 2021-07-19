@@ -6,7 +6,7 @@
     </v-toolbar-title>
     <v-autocomplete
       v-model="model"
-      :items="items"
+      :cards="cards"
       :loading="isLoading"
       :search-input.sync="search"
       chips
@@ -26,7 +26,7 @@
           </v-list-item-title>
         </v-list-item>
       </template>
-      <template v-slot:selection="{ attr, on, item, selected }">
+      <template v-slot:selection="{ attr, on, cards, selected }">
         <v-chip
           v-bind="attr"
           :input-value="selected"
@@ -35,15 +35,15 @@
           v-on="on"
         >
           <v-icon left> mdi-bitcoin </v-icon>
-          <span v-text="item.name"></span>
+          <span v-text="cards.name"></span>
         </v-chip>
       </template>
-      <template v-slot:item="{ item }">
+      <template v-slot:item="{ cards }">
         <v-list-item-avatar
           color="indigo"
           class="text-h5 font-weight-light white--text"
         >
-          {{ item.name.charAt(0) }}
+          {{ cards.name.charAt(0) }}
         </v-list-item-avatar>
         <v-list-item-content>
           <v-list-item-title v-text="item.name"></v-list-item-title>
@@ -73,7 +73,7 @@
 export default {
   data: () => ({
     isLoading: false,
-    items: [],
+    cards: [],
     model: null,
     search: null,
     tab: null,
@@ -86,15 +86,16 @@ export default {
     },
     search(val) {
       // Items have already been loaded
-      if (this.items.length > 0) return;
+      if (this.cards.length > 0) return;
 
       this.isLoading = true;
 
-      // Lazily load input items
-      fetch("https://api.coingecko.com/api/v3/coins/list")
+      // Lazily load input card
+      fetch("https://api.magicthegathering.io/v1/cards")
         .then((res) => res.clone().json())
         .then((res) => {
-          this.items = res;
+          this.cards = res;
+          console.log(this.cards.name)
         })
         .catch((err) => {
           console.log(err);

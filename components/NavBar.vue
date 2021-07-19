@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-app-bar color="#FFFFFF" elevate-on-scroll height="80">
+    <v-app-bar color="#FFFFFF" elevate-on-scroll height="70">
       <ImageSocialab class="mx-2" />
       <ImageBootcamp />
       <v-layout justify-end />
-      <a class="ma-2" href="/">Inicio</a>
-      <a class="ma-2" href="/cursos">Cursos</a>
-      <v-btn class="ma-4" outlined large fab color="indigo">
+      <a href="/" class="link ma-2">Inicio</a>
+      <a href="/cursos" class="link ma-2">Cursos</a>
+      <v-btn class="ma-5 white--text" small fab color="#a0c4ff">
         <v-icon>mdi-account-circle</v-icon>
       </v-btn>
     </v-app-bar>
@@ -16,10 +16,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      links: ["Inicio", "Cursos"],
-    };
-  },
+  
 };
 </script>

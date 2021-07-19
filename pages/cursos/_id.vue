@@ -1,39 +1,40 @@
 <template>
-  <div>
+  <v-app>
     <v-container>
       <h1>Detalle del curso: {{ $route.params.id }}</h1>
-      <v-row>
-        <v-col v-for="(card, i) in getData" :key="i" class="my-4">
-          <v-card :to="`/cursos/${card.name}`">
-            <v-img :src="card.imageUrl" class="indigo--text"
-              ><v-btn
-                class="ma-3"
-                rounded
-                x-small
-                v-text="card.name"
-                elevation="2"
-              ></v-btn>
-            </v-img>
-          </v-card>
-        </v-col>
-      </v-row>
+      <v-card>
+        Name: <br />
+        ManaCost: <br />
+        Cmc: <br />
+        Colors: <br />
+        ColorIdentity: <br />
+        Type: <br />
+        Types: <br />
+        Subtypes: <br />
+        Rarity: <br />
+        Set: <br />
+        SetName: <br />
+        Text: <br />
+        Artist: <br />
+        Number: <br />
+        Power: <br />
+        Toughness: <br />
+        Layout: <br />
+        Multiverseid: <br />
+        ImageUrl: <br />
+        Variations: <br />
+        ForeignNames: <br />
+        Printings: <br />
+        OriginalText: <br />
+        OriginalType: <br />
+        Legalities: <br />
+        Id: <br />
+      </v-card>
+      <v-btn :to="`/cursos`" class="my-4">Volver</v-btn>
     </v-container>
-  </div>
+  </v-app>
 </template>
 
 <script>
-import { mapActions } from "vuex";
-export default {
-  data() {
-    return {
-      data: {},
-    };
-  },
-  mounted() {
-    this.getData();
-  },
-  methods: {
-    ...mapActions(["getData"]),
-  },
-};
+export default {};
 </script>

@@ -1,18 +1,37 @@
 body {
   font-family: "Arimo", sans-serif;
+  color: var(--grayDark) !important;
 }
-#hr {
-  position: absolute;
-  border: 0;
+#line {
+  width: 51px;
+  height: 3px;
   margin-bottom: 5px;
-  height: 2px;
-  width: 50px;
-  left: 652px;
-  top: 120px;
   box-shadow: 0 1px 5px 1px #3434ff;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-a {
+.link {
+  color: var(--grayDark) !important;
   text-decoration: none;
+}
+.link_footer{
+  color: var(--grayMiddle) !important;
+  font-size: 16px;
+}
+.button-type-active{
+  color: var(--graysLight) !important;
+  background-color: var(--basePrimary) !important;
+}
+.button-type-disable{
+  color: var(--graysLight) !important;
+  background-color: var(--grayDark) !important;
+}
+:root {
+  /* colores fondo primarios */
+  --graysLight: #edf2f7;
+  --grayUltraLight: #e5e5e5;
+  --grayMiddle: #D5D5D5;
+  --grayDark: #262626;
+  --basePrimary: #3434ff;
 }
