@@ -29,7 +29,7 @@ export const getters = {
     } else {
       rst = data;
     }
-    const resulrado = rst.map(p => {
+    const result = rst.map(p => {
       const { name, imageUrl, type, id } = p;
       return {
         name,
@@ -39,10 +39,10 @@ export const getters = {
       };
     });
 
-    return resulrado;
+    return result;
   },
 
-  getCardDetalle: state => payload => {
+  getCardDetail: state => payload => {
     const data = state.cards;
     const rst = data.find(p => p.id === payload);
     return rst;

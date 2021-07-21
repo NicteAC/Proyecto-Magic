@@ -1,7 +1,6 @@
 <template>
   <v-app>
-    <v-toolbar height="80" color="#a0c4ff">
-      <v-app-bar-nav-icon class="hidden-sm-and-down"></v-app-bar-nav-icon>
+    <v-toolbar class="filter">
       <v-toolbar-title class="text-h6 mr-6 hidden-sm-and-down">
         <strong>Busca tu carta:</strong>
       </v-toolbar-title>
@@ -30,6 +29,7 @@
           >
             <v-icon left> mdi-information-variant </v-icon>
             <span v-text="item.type"></span>
+            <span v-text="item.name"></span>
           </v-chip>
         </template>
         <template v-slot:item="{ item }">
@@ -40,8 +40,8 @@
             {{ item.type.charAt(0) }}
           </v-list-item-avatar>
           <v-list-item-content>
-            <v-list-item-title v-text="item.name"></v-list-item-title>
-            <v-list-item-subtitle v-text="item.type"></v-list-item-subtitle>
+            <v-list-item-title v-text="item.type"></v-list-item-title>
+            <v-list-item-subtitle v-text="item.name"></v-list-item-subtitle>
           </v-list-item-content>
           <v-list-item-action>
             <v-icon>mdi-cards-outline</v-icon>
@@ -49,41 +49,42 @@
         </template>
       </v-autocomplete>
     </v-toolbar>
-    <v-container class="container-fluid">
+    <v-container>
       <v-overlay :value="overlay">
         <v-progress-circular indeterminate size="64"></v-progress-circular>
       </v-overlay>
-      <span class="mdi mdi-clipboard-list-outline my-5">{{cartas.length}} Colecciones disponibles para tu selección</span>
-      <v-row>
-        
-        <v-col v-for="(card, i) of cartas" :key="i" class="my-4" md="3">
+      <span class="mdi mdi-clipboard-list-outline my-5">{{allCards.length}} Colecciones disponibles para tu selección</span>
+      <v-row class="container-fluid">        
+        <v-col v-for="(card, i) of allCards" :key="i" class="my-4" md="3">
           <v-card :to="`/${card.id}`">
             <v-img v-if="card.imageUrl" :src="card.imageUrl">
               <v-btn
-                class="button-type-active my-10 mx-2"
+                class="button-type-active mt-10 mx-2"
                 rounded
                 x-small
                 v-text="card.type"
                 elevation="2"
-              ></v-btn>
+              ></v-btn><p class="textCard">{{card.name}}<br />{{card.type}}</p>
             </v-img>
             <v-img
               v-else
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRveklfC4eFp6gOv8wVjxlBQtFK5WkcImk-Eai_3WpdMavAQ5e_-AmgpCWnKPysIq1zQM&usqp=CAU"
             >
               <v-btn
-                class="button-type-disable my-10 mx-2"
+                class="button-type-disable mt-10 mx-2"
                 disabled
                 rounded
                 x-small
                 v-text="card.type"
                 elevation="2"
               ></v-btn>
+              <p class="textCard">{{card.name}}<br />{{card.type}}</p>
             </v-img>
           </v-card>
         </v-col>
-      </v-row>
+      </v-row>      
     </v-container>
+    
   </v-app>
 </template>
 
@@ -92,7 +93,7 @@ import { mapState, mapGetters, mapActions } from "vuex";
 export default {
   name: "Id",
   data: () => ({
-    cartas: [],
+    allCards: [],
     isLoading: false,
     items: [],
     model: null,
@@ -107,7 +108,7 @@ export default {
     ...mapActions(["getData"]),
 
     getFiltro() {
-      this.cartas = this.getCard(this.model);
+      this.allCards = this.getCard(this.model);
     },
   },
   computed: {
@@ -116,10 +117,10 @@ export default {
   },
   async mounted() {
     //  this.getData();
-    const carga = Promise.all([await this.getData()]);
-    if (carga) {
+    const load = Promise.all([await this.getData()]);
+    if (load) {
       this.overlay = false;
-      this.cartas = await this.getCard();
+      this.allCards = await this.getCard();
     }
   },
 
