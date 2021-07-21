@@ -29,7 +29,7 @@
       <v-row cols="12">
         <v-col class="textDetail" cols="2"><strong>Colors: </strong></v-col>
         <v-col class="textDescription">{{
-          getCardDetail(this.$route.params.id).colors[0]
+          getCardDetail(this.$route.params.id).colors 
         }}</v-col>
       </v-row>
       <v-row cols="12">
@@ -37,7 +37,7 @@
           ><strong>ColorIdentity: </strong></v-col
         >
         <v-col class="textDescription">{{
-          getCardDetail(this.$route.params.id).colorIdentity[0]
+          getCardDetail(this.$route.params.id).colorIdentity 
         }}</v-col>
       </v-row>
       <v-row cols="12">
@@ -49,13 +49,13 @@
       <v-row cols="12">
         <v-col class="textDetail" cols="2"><strong>Types: </strong></v-col>
         <v-col class="textDescription">{{
-          getCardDetail(this.$route.params.id).types[0]
+          getCardDetail(this.$route.params.id).types 
         }}</v-col>
       </v-row>
       <v-row cols="12">
         <v-col class="textDetail" cols="2"><strong>Subtypes: </strong></v-col>
         <v-col class="textDescription">{{
-          getCardDetail(this.$route.params.id).subtypes[0]
+          getCardDetail(this.$route.params.id).subtypes 
         }}</v-col>
       </v-row>
       <v-row cols="12">
@@ -123,7 +123,7 @@
       <v-row cols="12">
         <v-col class="textDetail" cols="2"><strong>Variations: </strong></v-col>
         <v-col class="textDescription"
-          >{{ getCardDetail(this.$route.params.id).variations[0] }}
+          >{{ getCardDetail(this.$route.params.id).variations  }}
         </v-col>
       </v-row>
       <v-row cols="12">
