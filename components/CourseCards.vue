@@ -28,8 +28,8 @@
             v-on="on"
           >
             <v-icon left> mdi-information-variant </v-icon>
-           {{'Tipo: ' + ' '}}
-            <span v-text="`${' '} ${item.type}`"></span>
+           Tipo:
+            <span v-text="item.type"></span>
           </v-chip>
         </template>
         <template v-slot:item="{ item }">
