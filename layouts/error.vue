@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <v-container>
     <h1 class="ma-20" v-if="error.statusCode === 404">
       {{ pageNotFound }}
     </h1>
@@ -8,8 +9,7 @@
     </h1>
     <h2>Oops algo ha ocurrido!</h2>
     <NuxtLink to="/"> Home page </NuxtLink>
-
-    <WavesImage />
+    </v-container>
   </v-app>
 </template>
 

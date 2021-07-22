@@ -29,19 +29,13 @@ body {
   background-color: var(--grayDark) !important;
 }
 .textCard{
-  margin-right: 8px;
-  margin-right: 8px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: flex-end !important;
+  margin-left: 8px;
+  margin-top: 5px;
   font-size: 20px;
   font-weight: bold;
-  color: var(--baseThird);
+  color: var(--grayDark);
 }
 .filter{
-  height: 65px !important;
   background-color: var(--baseSecondary)!important;
 }
 .textDetailTitle{
@@ -50,13 +44,12 @@ body {
 .textDetail{
   font-style: italic;
   color: var(--blueAccent2);
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
+  margin-top: 5px!important;
 }
 .textDescription{
   color: var(--grayDark);
-  padding-top: 3px !important;
-  padding-bottom: 3px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 .textTitle{
   color: var(--grayDark);
@@ -64,6 +57,11 @@ body {
 .container-fluid{
   display: flex;
   flex-direction: row;
+}
+.containerDetail{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap !important;
 }
 :root {
   /* colores fondo primarios */

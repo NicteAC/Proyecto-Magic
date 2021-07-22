@@ -1,8 +1,8 @@
 <template>
   <v-app>
-    <v-toolbar class="filter">
+    <v-toolbar class="filter" max-height="70">
       <v-toolbar-title class="text-h6 mr-6 hidden-sm-and-down">
-        <strong>Busca tu carta:</strong>
+        <strong>Filtra tu carta por tipo:</strong>
       </v-toolbar-title>
       <v-autocomplete
         v-model="model"
@@ -22,14 +22,14 @@
         <template v-slot:selection="{ attr, on, item, selected }">
           <v-chip
             v-bind="attr"
+            color="indigo"
             :input-value="selected"
-            color="blue-grey"
             class="white--text"
             v-on="on"
           >
             <v-icon left> mdi-information-variant </v-icon>
-            <span v-text="item.type"></span>
-            <span v-text="item.name"></span>
+           {{'Tipo: ' + ' '}}
+            <span v-text="`${' '} ${item.type}`"></span>
           </v-chip>
         </template>
         <template v-slot:item="{ item }">
@@ -56,16 +56,17 @@
       <span class="mdi mdi-clipboard-list-outline my-5">{{allCards.length}} Colecciones disponibles para tu selección</span>
       <v-row class="container-fluid">        
         <v-col v-for="(card, i) of allCards" :key="i" class="my-4" md="3">
-          <v-card :to="`/${card.id}`">
-            <v-img v-if="card.imageUrl" :src="card.imageUrl">
+          <v-card :to="`/${card.id}`" height="480" class="my-5">
+            <v-img v-if="card.imageUrl" :src="card.imageUrl" max-height="400">
               <v-btn
                 class="button-type-active mt-10 mx-2"
                 rounded
                 x-small
                 v-text="card.type"
                 elevation="2"
-              ></v-btn><p class="textCard">{{card.name}}<br />{{card.type}}</p>
+              ></v-btn>
             </v-img>
+            
             <v-img
               v-else
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRveklfC4eFp6gOv8wVjxlBQtFK5WkcImk-Eai_3WpdMavAQ5e_-AmgpCWnKPysIq1zQM&usqp=CAU"
@@ -77,9 +78,9 @@
                 x-small
                 v-text="card.type"
                 elevation="2"
-              ></v-btn>
-              <p class="textCard">{{card.name}}<br />{{card.type}}</p>
+              ></v-btn>              
             </v-img>
+            <p class="textCard">Nombre: {{card.name}}<br />Tipo: {{card.type}}</p>
           </v-card>
         </v-col>
       </v-row>      
